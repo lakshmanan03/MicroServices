@@ -1,0 +1,38 @@
+spring:
+  security:
+    user:
+      name: rpmadmin
+      password: RPMR0cks!!
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    show-sql: true
+
+logging:
+  directory: /var/log
+  logstash:
+    host: javadevapi1.stoncor.com:5043
+  filesize:
+    max: 100MB
+  archivesize:
+    max: 10GB
+  history:
+    max: 60
+  dev:
+    loglevel: DEBUG
+  staging:
+    loglevel: DEBUG
+  production:
+    loglevel: INFO
+
+ribbon:
+  eureka:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

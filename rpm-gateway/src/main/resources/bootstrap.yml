@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: rpm-gateway
+  profiles:
+    active: local
+  cloud:
+    config:
+      uri: http://localhost:8089
+server:
+  port: ${PORT:8080}
+
+hystrix:
+  command:
+    default:
+      execution:
+        iso lation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+
+ribbon:
+  ReadTimeout: 60000
+  connection-timeout: 3000
+  eureka:
+    enabled: true
+
+zuul:
+  host:
+    connect-timeout-millis: 5000000
+    socket-timeout-millis: 5000000
+  ignoredServices: '*'
+  routes:
+    rpm-auth-service:
+      path: /authservice/**
+      serviceId: rpm-auth-service
+      stripPrefix: true
+    rpm-account-service:
+      path: /accountservice/**
+      serviceId: rpm-account-service
+      stripPrefix: true
+    rpm-project-service:
+      path: /projectservice/**
+      serviceId: rpm-project-service
+      stripPrefix: true
+    rpm-calendar-service:
+      path: /calendarservice/**
+      serviceId: rpm-calendar-service
+      stripPrefix: true
+    rpm-search-service:
+      path: /searchservice/**
+      serviceId: rpm-search-service
+      stripPrefix: true

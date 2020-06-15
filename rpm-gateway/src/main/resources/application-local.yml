@@ -1,0 +1,16 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+        username: "rpmadmin"
+        password: "RPMR0cks!!"
+        instance:
+          metadata:
+            user.name: rpmadmin
+            user.password: RPMR0cks!!
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
