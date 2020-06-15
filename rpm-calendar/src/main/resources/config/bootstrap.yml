@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: rpm-calendar-service
+  profiles:
+    active: ${ENV_PROFILE}
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
