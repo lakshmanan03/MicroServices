@@ -1,0 +1,10 @@
+server:
+  port: ${PORT:8084}
+
+account:
+  maxNotesCount : 3
+  testUserId: 43625
+
+logging:
+  rpm-account-service:
+    file: rpm-account-service.log

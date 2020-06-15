@@ -1,0 +1,17 @@
+spring:
+  security:
+    user:
+      name: rpmadmin
+      password: RPMR0cks!!
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    show-sql: true
+  application:
+    name: rpm-account-service
+  profiles:
+    active: local
+
+
+
+
+TEST_USER_ID: 43625

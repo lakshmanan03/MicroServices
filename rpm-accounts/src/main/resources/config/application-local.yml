@@ -1,0 +1,29 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+        username: "rpmadmin"
+        password: "RPMR0cks!!"
+        instance:
+          metadata:
+            user.name: rpmadmin
+            user.password: RPMR0cks!!
+
+tenants:
+  datasources:
+    usl:
+      url: jdbc:oracle:thin:@198.245.140.10:1521:lndb
+      driver: oracle.jdbc.OracleDriver
+      username: sfausl3
+      password: sfa1030
+    fibergrate:
+      url: jdbc:oracle:thin:@198.245.140.10:1521:lndb
+      driver: oracle.jdbc.OracleDriver
+      username: sfafibergrate3
+      password: sfa1030
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
