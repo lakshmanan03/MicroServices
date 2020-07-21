@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: rpm-config-server
+  security:
+    user:
+      name: rpmadmin
+      password: RPMR0cks!!
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+        username: "rpmadmin"
+        password: "RPMR0cks!!"
+        instance:
+          metadata:
+            user.name: rpmadmin
+            user.password: RPMR0cks!!
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.com/pcg-mobility-project/microservices/rpm-config-respository.git
+          ignore-local-ssh-settings: true
+          strict-host-key-checking: false
+          search-paths:
+            - configuration
+            - configuration/{application}
+          username: sivaprasad.merik@hcl.com
+          password: Sivahcl@123
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
+server:
+  port: ${PORT:8089}
+
+
+ribbon:
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
