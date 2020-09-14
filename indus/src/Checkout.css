@@ -1,0 +1,34 @@
+.checkout__ad
+{
+    margin-top: -25px;
+    width: 100%;
+   
+    
+
+}
+
+
+.fullBasket
+{
+display:inline; 
+
+ 
+ 
+}
+.left
+{
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.subtotal
+{
+      
+
+   width:100px;
+   height:200px;
+ 
+
+}
+
